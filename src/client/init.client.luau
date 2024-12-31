@@ -60,7 +60,10 @@ ms.Button1Down:Connect(function()
     if not canPlace then
         return
     end
-    local_rep:FireServer()
+    if not BuildFuncs.IsSafe(preview_part.Position) then
+        return
+    end
+    local_rep:FireServer(preview_part.Position)
 end)
 
 local function PlacePreview()
