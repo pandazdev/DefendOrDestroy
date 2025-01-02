@@ -1,11 +1,6 @@
 local block = {}
 block.__index = block
 
-local Storage = Instance.new("Folder", game.ServerStorage)
-Storage.Name = "PartStorage<SS/Block>"
-
-local WStorage = Instance.new("Folder", game.Workspace)
-WStorage.Name = "PartStorage<SS/Block>"
 
 
 
@@ -72,8 +67,7 @@ local Sides = {
 
 function block.new()
     local self = setmetatable({}, block)
-    self.Block = Storage:GetChildren()[1] or blockTemplate:Clone()
-    self.Block.Parent = WStorage
+    self.Block = blockTemplate:Clone()
     self.Health = 100 -- How much health a block has
     self.Weight = 1 -- How much it subtracts from players walkspeed
     self.PickUpTime = 1 -- Seconds

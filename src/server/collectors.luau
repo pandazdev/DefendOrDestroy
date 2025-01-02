@@ -1,5 +1,5 @@
 local signal = require(game.ReplicatedStorage.Shared.FastSignal)
-local BlocksConfig = require(game.ServerScriptService.Server.block).BlockConfigs
+local BlocksConfig = require(game.ReplicatedStorage.Shared.block).BlockConfigs
 
 local Spawners = workspace.Spawners:GetChildren()
 local Collectors = {}
